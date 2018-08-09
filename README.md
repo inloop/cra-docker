@@ -14,10 +14,11 @@ FROM inloopx/cra-docker
 COPY build /app
 ```
 
-And then you can call:
+then you can call:
 
 ```
-yarn build # npm build
+# or npm run build
+yarn build
 docker build -t my-new-app .
 ```
 
