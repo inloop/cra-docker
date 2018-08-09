@@ -1,0 +1,32 @@
+stages:
+  - compile
+  - build
+
+compile:
+  image: node:8.4.0
+  stage: compile
+  tags:
+    - docker
+  artifacts:
+    expire_in: 10 minutes
+    paths:
+      - build/
+  script:
+    - yarn install
+    - yarn build
+  only:
+    - develop
+    - master
+
+build:
+  image: inloopeu/devops
+  stage: build
+  tags:
+    - docker
+  services:
+    - docker:dind
+  script:
+    - devops gitlab docker build
+  only:
+    - develop
+    - master
