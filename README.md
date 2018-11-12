@@ -1,6 +1,9 @@
 # cra-docker
 
-Create statically built CRA applications docker images for easy deployment.
+Create statically built Create React App applications docker images for easy deployment with environment variables support at runtime.
+
+This project was created to solve known problem with CRA in favor of 12 factor apps.
+See https://github.com/facebook/create-react-app/issues/2353
 
 ## Usage
 
